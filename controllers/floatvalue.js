@@ -26,10 +26,8 @@ async function updateValue(req, res, next) {
 async function createValue(req, res, next) {
 	const float = await Float.find()
 	console.log('here',float)
-	// const floatId = req.params.id
 	if(float.length > 1) {
 		res.sendStatus(409)
-		
 	} else {
 		try {
 			const createValue = await Float.create(req.body)
@@ -38,9 +36,6 @@ async function createValue(req, res, next) {
 			next(err)
 		}
 	}
-
-
-
 }
 
 module.exports = {
